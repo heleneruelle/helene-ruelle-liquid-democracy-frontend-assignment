@@ -1,0 +1,51 @@
+.toggle-button-container {
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 4px;
+  overflow: hidden;
+  width: fit-content;
+}
+  
+.toggle-button {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+  
+.toggle-button:not(.active) {
+  background-color: #fff;
+  color: #000;
+}
+  
+.toggle-button .icon {
+  margin-right: 8px;
+}
+  
+.toggle-button.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.toggle-button.active:focus {
+  background-color: #000;
+  color: #fff;
+}
+  
+.toggle-button:focus {
+  background-color: #eee;
+  color: #000;
+}
+  
+.toggle-button:hover:not(.active) {
+  background-color: #eee;
+}
+  
