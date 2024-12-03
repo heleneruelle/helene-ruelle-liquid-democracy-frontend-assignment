@@ -1,0 +1,13 @@
+.tag {
+  width: fit-content;
+  padding: 3px 6px;
+  background-color: #00C295;
+  color: black;
+  border-radius: 10px;
+}
+
+.tag p {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
+}
