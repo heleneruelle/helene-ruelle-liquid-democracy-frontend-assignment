@@ -1,3 +1,6 @@
+export const CARD_LAYOUT_GRID = "grid";
+export const CARD_LAYOUT_LIST = "list";
+
 export const TAGS = {
   work_and_economy: "Work and Economy",
   urban_development: "Urban development",
