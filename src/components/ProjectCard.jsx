@@ -30,14 +30,7 @@ const ProjectCard = ({ project }) => {
         <h3>{project.title}</h3>
         <p className="description">{project.description}</p>
         {project.daysUntilEndDate > 0 && (
-          <ProgressBar
-            progress={project.completionPercentage}
-            aria-valuenow={project.completionPercentage}
-            aria-valuemin="0"
-            aria-valuemax="100"
-            role="progressbar"
-            aria-label={`Completion: ${project.completionPercentage}%`}
-          />
+          <ProgressBar progress={project.completionPercentage} />
         )}
         <div className="flex-row-centered">
           <div className="clock-icon" aria-hidden="true" />
