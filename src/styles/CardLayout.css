@@ -1,0 +1,36 @@
+.card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+  
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+  
+.cards-container.grid {
+  flex-wrap: wrap;
+  width: calc((312px * 3) + (20px * 2));
+}
+  
+.cards-container.grid .card {
+  flex-shrink: 1;
+  flex-basis: 312px; /* 3 columns */
+  box-sizing: border-box;
+  align-items: center;
+}
+  
+.cards-container.list {
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.cards-container.list .card:not(.mobile) {
+  flex-direction: row;
+  flex: 1 1 100%;
+}
+
