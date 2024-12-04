@@ -1,0 +1,15 @@
+.main {
+  text-align: center;
+}
+
+.container {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-row-centered {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
