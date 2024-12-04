@@ -23,7 +23,7 @@ const CardLayout = ({ projects }) => {
   return (
     <div className="card-layout">
       {!isMobile && <CardLayoutToggle view={view} onToggle={setView} />}
-      <div className={`cards-container ${view}`}>
+      <div className={`cards-container ${view}`} data-testid="cards-container">
         {projects.map((project) => (
           <ProjectCard project={project} key={project.id} />
         ))}

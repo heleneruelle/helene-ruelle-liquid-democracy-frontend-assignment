@@ -12,6 +12,7 @@ const ProjectCard = ({ project }) => {
       className={`card ${isMobile && "mobile"}`}
       role="region"
       aria-labelledby={`card-title-${project.id}`}
+      data-testid="project-card"
     >
       <div className="card-image" aria-hidden="true">
         Image

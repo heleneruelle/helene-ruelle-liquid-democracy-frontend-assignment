@@ -11,6 +11,7 @@ const CardLayoutToggle = ({ view, onToggle }) => {
       className="toggle-button-container"
       role="group"
       aria-label="Card Layout Toggle"
+      data-testid="card-layout-toggle"
     >
       <button
         className={`toggle-button ${!isGridView ? "active" : ""}`}
