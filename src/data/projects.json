@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "tags": ["urban_development", "sustainability"],
+      "location": "Spandau",
+      "image": "path/to/image1.jpg",
+      "startDate": 1730428800000,  
+      "endDate": 1732656000000
+    },
+    {
+      "id": 2,
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "tags": ["culture_and_leisure", "children_youth_and_family"],
+      "location": "Spandau",
+      "image": "path/to/image2.jpg",
+      "startDate": 1730601600000, 
+      "endDate": 1733875200000
+    },
+    {
+      "id": 3,
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "tags": ["work_and_economy", "urban_development"],
+      "location": "Spandau",
+      "image": "path/to/image3.jpg",
+      "startDate": 1730774400000, 
+      "endDate": 1734307200000
+    },
+    {
+      "id": 4,
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "tags": ["sustainability", "education_and_research"],
+      "location": "Spandau",
+      "image": "path/to/image4.jpg",
+      "startDate": 1730947200000,  
+      "endDate": 1734739200000
+    },
+    {
+      "id": 5,
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "tags": ["work_and_economy", "urban_development"],
+      "location": "Spandau",
+      "image": "path/to/image5.jpg",
+      "startDate": 1732137600000, 
+      "endDate": 1735171200000
+    },
+    {
+      "id": 6,
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "tags": ["work_and_economy", "urban_development"],
+      "location": "Spandau",
+      "image": "path/to/image5.jpg",
+      "startDate": 1732310400000, 
+      "endDate": 1735603200000
+    }
+]
+  
