@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Hélène Ruelle - Technical assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 ## Available Scripts
 
-In the project directory, you can run:
+After cloning this repository locally, here are the scripts you can run to experience the code.\
+Please run `npm install` before anything.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Testing in this app is very light and is based on React Testing library and Jest.
 
-### `npm run build`
+## Accessibility
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app prioritizes accessibility by using semantic HTML and ARIA labels. In desktop mode, the layout toggle buttons are fully accessible with keyboard navigation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Let's focus on the 2 major components : 
+- `ProjectCard`
+- `CardLayout`
 
-### `npm run eject`
+### `ProjectCard`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The API of this component is meant to receive a view ready version of the project object.
+```
+{
+  "id": number,
+  "title": string,
+  "description": string,
+  "tags": <string>,
+  "location": string,
+  "image": string,
+  "completionPercentage": number,  
+  "completionStatus": string,
+  "daysUntilEndDate": number
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+➡ *Screenshot*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `CardLayout`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is the main component here, `CardLayout` displays a list of project cards in a responsive layout that switches between `grid` and `list` views based on device size and on user interaction, using the `useIsMobile` hook. Each project in the data set is rendered dynamically as `ProjectCard` component.
 
-## Learn More
+*Local state :* `CardLayout` controls its own state (`grid` or `list`) using the `useState` hook. Any UI updates are CSS controlled via a flexbox layout. As the state is not passed down children components, except for `CardLayoutToggle` which is fully controlled by its parents, CardLayout's CSS file is responsible for the UI changes inside the `ProjectCard` component UI, performing styling overwrites.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Mobile version
+The mobile version of this layout is, by default and without a possible change, in `list` state. The toggle component is not displayed. Even though the state of the layout is `list`, the appearance of the each project card is slightly different from the desktop `list`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+➡ *Screenshot*
+![mobile](./public/doc-mobile-layout.png)
 
-### Code Splitting
+#### Desktop version
+Desktop users can toggle between views via the `CardLayoutToggle` component with a default value on `grid`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+➡ *Screenshot (grid layout)*
+![grid layout](./public/doc-grid-layout.png)
 
-### Analyzing the Bundle Size
+➡ *Screenshot (list layout)*
+![list layout](./public/doc-list-layout.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Custom hook
 
-### Making a Progressive Web App
+The `useIsMobile` hook keeps things simple by detecting if the user is on a mobile device. It listens for window resize events and updates dynamically, so the app can adjust layouts seamlessly. This hook helps make the app responsive and keeps the layout optimized for different screen sizes without cluttering the components with device-specific logic.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Error handling
 
-### Advanced Configuration
+The app is built to handle errors smoothly and keep things running without crashing. At the root level, we have an `ErrorBoundary` that catches any unexpected errors in the component tree and shows a fallback message instead of breaking the app. On top of that, the `App` component has its own safety net with an error state. If something goes wrong during data fetching, it skips rendering the `CardLayout` and shows an error message instead. This setup ensures that both big and small issues are handled gracefully, keeping the app stable and user-friendly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Ways forward
 
-### Deployment
+### Further Test Proofing
+Enhance the test coverage by simulating more edge cases and integrating end-to-end (E2E) testing to validate user workflows comprehensively.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Typing with TypeScript
+Transition the app to TypeScript for improved type safety and maintainability, as prop-types is being deprecated by React. This ensures better developer experience and minimizes runtime errors.
 
-### `npm run build` fails to minify
+### Component refactor
+We can refactor the `ProjectCard` component by breaking it into smaller, leaf components. This would enhance modularity, improve reusability, and make the codebase easier to maintain and extend in the future.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
