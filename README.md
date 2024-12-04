@@ -75,6 +75,28 @@ The `useIsMobile` hook keeps things simple by detecting if the user is on a mobi
 
 The app is built to handle errors smoothly and keep things running without crashing. At the root level, we have an `ErrorBoundary` that catches any unexpected errors in the component tree and shows a fallback message instead of breaking the app. On top of that, the `App` component has its own safety net with an error state. If something goes wrong during data fetching, it skips rendering the `CardLayout` and shows an error message instead. This setup ensures that both big and small issues are handled gracefully, keeping the app stable and user-friendly.
 
+## Data 
+Basic data structure is as following. 
+```
+[
+{
+      "id": number,
+      "title": string,
+      "description": string,
+      "tags": <string>,
+      "location": string,
+      "image": string,
+      "startDate": number, //timestamp
+      "endDate": number // timestamp
+    },
+]
+```
+
+On top of this we add 3 functions to compute dynamic properties (based on today's date for instance).
+- `durationBetweenDates` : to compute the days duration of the project (based on `startDate` and `endDate`)
+- `daysUntilFutureDate` : to compute number of days between today and `endDate` 
+- `projectCompletionState` : gather both values above to compute the completion state as a percentage
+
 ## Ways forward
 
 ### Further Test Proofing
