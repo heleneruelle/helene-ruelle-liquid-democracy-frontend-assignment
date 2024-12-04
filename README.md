@@ -44,8 +44,6 @@ The API of this component is meant to receive a view ready version of the projec
 }
 ```
 
-➡ *Screenshot*
-
 ### `CardLayout`
 
 This is the main component here, `CardLayout` displays a list of project cards in a responsive layout that switches between `grid` and `list` views based on device size and on user interaction, using the `useIsMobile` hook. Each project in the data set is rendered dynamically as `ProjectCard` component.
@@ -55,17 +53,23 @@ This is the main component here, `CardLayout` displays a list of project cards i
 #### Mobile version
 The mobile version of this layout is, by default and without a possible change, in `list` state. The toggle component is not displayed. Even though the state of the layout is `list`, the appearance of the each project card is slightly different from the desktop `list`.
 
-➡ *Screenshot*
-![mobile](./public/doc-mobile-layout.png)
+<details>
+  <summary>➡ Screenshot (mobile layout)</summary>
+  <img src="./public/doc-mobile-layout.png" height=400>
+</details>
 
 #### Desktop version
 Desktop users can toggle between views via the `CardLayoutToggle` component with a default value on `grid`.
 
-➡ *Screenshot (grid layout)*
-![grid layout](./public/doc-grid-layout.png)
+<details>
+  <summary>➡ Screenshot (grid layout)</summary>
+  <img src="./public/doc-grid-layout.png" width=500>
+</details>
 
-➡ *Screenshot (list layout)*
-![list layout](./public/doc-list-layout.png)
+<details>
+  <summary>➡ Screenshot (list layout)</summary>
+  <img src="./public/doc-list-layout.png" width=500>
+</details>
 
 ## Custom hook
 
